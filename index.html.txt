@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>PT Nafaz Jaya Pratama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        header {
+            background: #c82323;
+            color: white;
+            padding: 20px;
+            text-align: center;
+ukar
+        }
+        header img {
+            width: 90px;
+            margin-bottom: 10px;
+        }
+        nav {
+            background: #9f1c1c;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            background: url('proyek-listrik.jpg') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 1px 1px 4px black;
+        }
+        .hero h2 {
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        h2 {
+            color: #c82323;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo-njp.jpg" alt="Logo PT Nafaz Jaya Pratama">
+    <h1>PT Nafaz Jaya Pratama</h1>
+    <p>General Contractor • Jasa Konstruksi Elektrikal • Perdagangan Umum</p>
+</header>
+
+<nav>
+    <a href="#tentang">Tentang Kami</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#proyek">Proyek</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<div class="hero">
+    <h2>Profesional & Terpercaya di Bidang Elektrikal</h2>
+</div>
+
+<div class="container">
+
+    <div class="box" id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>
+            PT Nafaz Jaya Pratama adalah perusahaan General Contractor yang
+            bergerak di bidang jasa konstruksi elektrikal dan perdagangan umum.
+            Kami mengutamakan kualitas pekerjaan, keselamatan kerja, dan
+            kepuasan pelanggan.
+        </p>
+    </div>
+
+    <div class="box" id="layanan">
+        <h2>Layanan Kami</h2>
+        <ul>
+            <li>Instalasi Jaringan Listrik</li>
+            <li>Pekerjaan Tiang & Kabel Listrik</li>
+            <li>Panel & Sistem Elektrikal</li>
+            <li>Maintenance dan Perawatan</li>
+            <li>Pengadaan & Perdagangan Umum</li>
+        </ul>
+    </div>
+
+    <div class="box" id="proyek">
+        <h2>Dokumentasi Proyek</h2>
+        <img src="proyek-listrik.jpg" alt="Proyek Elektrikal"
+             style="width:100%; border-radius:5px;">
+        <p>Pekerjaan pemasangan jaringan listrik dan infrastruktur pendukung.</p>
+    </div>
+
+    <div class="box" id="kontak">
+        <h2>Kontak Kami</h2>
+        <p><b>Email:</b> info@nafazjayapratama.co.id</p>
+        <p><b>Telepon:</b> 08xxxxxxxxxx</p>
+        <p><b>Alamat:</b> Indonesia</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 PT Nafaz Jaya Pratama</p>
+</footer>
+
+</body>
+</html>
