@@ -4,80 +4,136 @@
     <meta charset="UTF-8">
     <title>PT Nafaz Jaya Pratama</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- STYLE -->
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             background: #f4f4f4;
         }
+
         header {
             background: #c82323;
             color: white;
             padding: 20px;
             text-align: center;
-ukar
         }
+
         header img {
             width: 90px;
             margin-bottom: 10px;
         }
+
         nav {
             background: #9f1c1c;
             padding: 10px;
             text-align: center;
         }
+
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
         }
+
         .hero {
-            background: url('proyek-listrik.jpg') center/cover no-repeat;
+            background: #555;
             height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            text-shadow: 1px 1px 4px black;
         }
-        .hero h2 {
-            background: rgba(0,0,0,0.5);
-            padding: 15px;
-            border-radius: 5px;
-        }
+
         .container {
             padding: 20px;
         }
+
         .box {
             background: white;
-            padding: 100px;
-            margin-bottom: 100px;
+            padding: 30px;
+            margin-bottom: 30px;
             border-radius: 10px;
         }
+
         h2 {
             color: #c82323;
         }
+
         footer {
             background: #222;
             color: white;
             text-align: center;
             padding: 15px;
         }
+
+        /* === GALERI === */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo {
+            cursor: pointer;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .photo span {
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+            text-align: center;
+            color: #555;
+        }
+
+        /* === MODAL === */
+        #modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            text-align: center;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        #modal img {
+            max-width: 90%;
+            max-height: 75%;
+            border-radius: 8px;
+        }
+
+        #modal p {
+            color: #fff;
+            margin-top: 15px;
+        }
     </style>
 </head>
+
 <body>
 
 <header>
     <img src="logo-njp.jpg" alt="Logo PT Nafaz Jaya Pratama">
     <h1>PT Nafaz Jaya Pratama</h1>
-    <p>General Contractor • Jasa Konstruksi Elektrikal • Perdagangan Umum</p>
+    <p>General Contractor • Konstruksi Elektrikal • Perdagangan Umum</p>
 </header>
 
 <nav>
     <a href="#tentang">Tentang Kami</a>
-    <a href="#layanan">Layanan</a>
-    <a href="#proyek">Proyek</a>
+    <a href="#dokumentasi">Dokumentasi</a>
     <a href="#kontak">Kontak</a>
 </nav>
 
@@ -88,49 +144,65 @@ ukar
 <div class="container">
 
     <div class="box" id="tentang">
-        <h2>profile Perusahaan</h2>
+        <h2>Profil Perusahaan</h2>
         <p>
-            <strong>PT Nafaz Jaya Pratama </strong>strong> adalah perusahaan general kontraktor di bidang konstruksi elektrikal yang menangani pekerjaan JTM, JTR, instalasi listrik, sambungan rumah, 
-            serta gardu distribusi. Kami melayani proyek perumahan, hotel, kawasan belum berlistrik, serta fasilitas umum dan komersial seperti bank, mal, rumah sakit, dan gedung pemerintahan, 
-            termasuk maintenance, pekerjaan darurat (emergency), pemasangan KWh meter, dan penambahan daya. Selain kelistrikan, kami juga berpengalaman dalam pekerjaan interior, 
-            salah satunya pada proyek PLTG Balai Pungut. Sebagai mitra resmi PLN (Persero) yang berkontrak langsung dengan PLN UID Wilayah Riau dan Kepulauan Riau serta PLN UID Sumatera Barat, 
-            kami berkomitmen memberikan layanan yang aman, berkualitas, dan terpercaya..
+            <strong>PT Nafaz Jaya Pratama</strong> adalah perusahaan general contractor
+            di bidang konstruksi elektrikal yang menangani pekerjaan JTM, JTR,
+            instalasi listrik, sambungan rumah, dan gardu distribusi.
         </p>
     </div>
 
-    <div class="box" id="layanan">
-        <h2>Layanan Kami</h2>
-        <ul>
-            <li>Instalasi Jaringan Listrik</li>
-            <li>Pekerjaan Tiang & Kabel Listrik</li>
-            <li>Panel & Sistem Elektrikal</li>
-            <li>Maintenance dan Perawatan</li>
-            <li>Pengadaan & Perdagangan Umum</li>
-        </ul>
-    </div>
+    <div class="box" id="dokumentasi">
+        <h2>Dokumentasi Pekerjaan</h2>
 
-    <div class="box" id="proyek">
-        <h2>Dokumentasi Proyek</h2>
-        <img src="proyek-listrik.jpg" alt="Proyek Elektrikal"
-             style="width:100%; border-radius:5px;">
-        <p>Pekerjaan pemasangan jaringan listrik dan infrastruktur pendukung.</p>
+        <div class="gallery">
+            <div class="photo" onclick="openModal(this)">
+                <img src="proyek1.jpg">
+                <span>Pekerjaan JTM</span>
+            </div>
+
+            <div class="photo" onclick="openModal(this)">
+                <img src="proyek2.jpg">
+                <span>Instalasi Gardu</span>
+            </div>
+
+            <div class="photo" onclick="openModal(this)">
+                <img src="proyek3.jpg">
+                <span>Instalasi Gedung</span>
+            </div>
+        </div>
     </div>
 
     <div class="box" id="kontak">
         <h2>Kontak Kami</h2>
-        <p><b>Email:</b> info@nafazjayapratama.co.id</p>
-        <p><b>Telepon:</b> 08xxxxxxxxxx</p>
-        <p><b>Alamat:</b> Indonesia</p>
+        <p>Email: pt.nafazjayapratama@yahoo.com</p>
+        <p>Telepon: 08117068380</p>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 PT Nafaz Jaya Pratama</p>
+    © 2026 PT Nafaz Jaya Pratama
 </footer>
+
+<!-- MODAL -->
+<div id="modal" onclick="closeModal()">
+    <img id="modalImg">
+    <p id="modalText"></p>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+function openModal(el) {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("modalImg").src = el.querySelector("img").src;
+    document.getElementById("modalText").innerText = el.querySelector("span").innerText;
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
-
-
-
