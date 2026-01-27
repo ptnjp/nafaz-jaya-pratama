@@ -183,6 +183,65 @@ footer {
     font-weight: 600;
     border-radius: 30px;
 }
+
+/* === GALERI PROFESIONAL === */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.photo img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.photo:hover .overlay {
+    opacity: 1;
+}
+
+.overlay span {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.overlay button {
+    padding: 8px 18px;
+    border: none;
+    background: #c82323;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
     
 </style>
 </head>
@@ -273,6 +332,39 @@ PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Per
 </div>
 </section>
 
+<div class="box" id="dokumentasi">
+    <h2>Dokumentasi Pekerjaan</h2>
+    <p>Beberapa proyek dan pekerjaan yang telah kami laksanakan.</p>
+
+    <div class="gallery">
+
+        <div class="photo">
+            <img src="proyek1.jpg" alt="Pekerjaan JTM">
+            <div class="overlay" onclick="openModal(this)">
+                <span>Pekerjaan JTM</span>
+                <button>Lihat Selengkapnya</button>
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="proyek2.jpg" alt="Instalasi Gardu">
+            <div class="overlay" onclick="openModal(this)">
+                <span>Instalasi Gardu Distribusi</span>
+                <button>Lihat Selengkapnya</button>
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="proyek3.jpg" alt="Instalasi Gedung">
+            <div class="overlay" onclick="openModal(this)">
+                <span>Instalasi Listrik Gedung</span>
+                <button>Lihat Selengkapnya</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
 <section class="section" id="kontak">
 <h2>Kontak Kami</h2>
 <p>Email: pt.nafazjayapratama@yahoo.com</p>
@@ -296,6 +388,11 @@ PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Per
 <img id="modalImg">
 </div>
 
+<div id="modal" onclick="closeModal()">
+    <img id="modalImg">
+    <p id="modalText"></p>
+</div>
+    
 <script>
 function openModal(img){
     document.getElementById("modal").style.display="block";
@@ -303,8 +400,24 @@ function openModal(img){
 }
 </script>
 
+<script>
+function openModal(el) {
+    const img = el.parentElement.querySelector("img");
+    const text = el.querySelector("span").innerText;
+
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("modalImg").src = img.src;
+    document.getElementById("modalText").innerText = text;
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+    
 </body>
 </html>
+
 
 
 
