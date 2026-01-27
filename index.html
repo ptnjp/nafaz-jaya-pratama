@@ -354,6 +354,16 @@ footer {
     padding-left: 20px;
 }
 
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav a.active {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 4px;
+}
     
 </style>
 </head>
@@ -505,16 +515,7 @@ PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Per
 <p>Email: pt.nafazjayapratama@yahoo.com</p>
 <p>Telepon: 0811-7068-380</p>
 </section>
-
-    <iframe 
-src="https://www.google.com/maps/embed"
-width="100%" 
-height="300" 
-style="border:0; border-radius:12px;" 
-allowfullscreen="" 
-loading="lazy">
-</iframe>
-    
+      
 <section class="section" id="lokasi">
     <h2>Lokasi Kantor</h2>
 
@@ -542,7 +543,7 @@ loading="lazy">
 
     <form class="offer-form" onsubmit="sendWA(); return false;">
         <input type="text" id="nama" placeholder="Nama Perusahaan / Perorangan" required>
-        <input type="text" id="kontak" placeholder="No. HP / WhatsApp" required>
+        <input type="text" id="nohp" placeholder="No. HP / WhatsApp" required>
         <input type="text" id="lokasi" placeholder="Lokasi Proyek" required>
         <textarea id="deskripsi" placeholder="Deskripsi Pekerjaan" rows="5" required></textarea>
 
@@ -589,7 +590,7 @@ function closeModal() {
 <script>
 function sendWA() {
     const nama = document.getElementById("nama").value;
-    const kontak = document.getElementById("kontak").value;
+    const kontak = document.getElementById("nohp").value;
     const lokasi = document.getElementById("lokasi").value;
     const deskripsi = document.getElementById("deskripsi").value;
 
@@ -607,9 +608,33 @@ ${deskripsi}`;
     window.open(waUrl, "_blank");
 }
 </script>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
     
 </body>
 </html>
+
 
 
 
