@@ -127,6 +127,58 @@
     text-justify: inter-word;
     line-height: 1.8;
 }
+
+/* BUTTON */
+.btn-more {
+    background: #c82323;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-more:hover {
+    background: #9f1c1c;
+}
+
+/* MODAL GALERI */
+#galleryModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    overflow-y: auto;
+}
+
+.gallery-content {
+    background: #fff;
+    margin: 60px auto;
+    padding: 25px;
+    max-width: 900px;
+    border-radius: 10px;
+}
+
+.gallery-content h3 {
+    text-align: center;
+    color: #c82323;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
         
     </style>
 </head>
@@ -183,7 +235,12 @@
             </div>
         </div>
     </div>
-
+<!-- BUTTON LIHAT SEMUA -->
+<div style="text-align:center; margin-top:25px;">
+    <button class="btn-more" onclick="openGallery()">
+        Klik Selengkapnya
+    </button>
+</div>
     <div class="box" id="kontak">
         <h2>Kontak Kami</h2>
         <p>Email: pt.nafazjayapratama@yahoo.com</p>
@@ -201,7 +258,23 @@
     <img id="modalImg">
     <p id="modalText"></p>
 </div>
+    
+<!-- MODAL GALERI -->
+<div id="galleryModal" onclick="closeGallery()">
+    <div class="gallery-content" onclick="event.stopPropagation()">
+        <h3>Dokumentasi Pekerjaan</h3>
 
+        <div class="gallery-grid">
+            <img src="proyek1.jpg">
+            <img src="proyek2.jpg">
+            <img src="proyek3.jpg">
+            <img src="proyek4.jpg">
+            <img src="proyek5.jpg">
+            <img src="proyek6.jpg">
+        </div>
+    </div>
+</div>
+<img src="namafoto.jpg">    
 <!-- JAVASCRIPT -->
 <script>
 function openModal(el) {
@@ -214,9 +287,18 @@ function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
 </script>
+<script>
+function openGallery() {
+    document.getElementById("galleryModal").style.display = "block";
+}
 
+function closeGallery() {
+    document.getElementById("galleryModal").style.display = "none";
+}
+</script>
 </body>
 </html>
+
 
 
 
