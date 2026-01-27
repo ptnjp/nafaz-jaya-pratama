@@ -268,6 +268,60 @@ footer {
     border-radius: 25px;
     font-size: 14px;
 }
+
+/* FLOATING WHATSAPP */
+.wa-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    font-size: 28px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.wa-float:hover {
+    background: #1ebe5d;
+}
+
+/* FORM PENAWARAN */
+.offer-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.offer-form input,
+.offer-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+}
+
+.offer-form button {
+    width: 100%;
+    padding: 14px;
+    background: #b71c1c;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.offer-form button:hover {
+    background: #7f0000;
+}
     
 </style>
 </head>
@@ -408,6 +462,20 @@ PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Per
     
 </div>
 
+    <section class="section" id="penawaran">
+    <h2>Form Penawaran Proyek</h2>
+    <p>Silakan isi form berikut untuk pengajuan pekerjaan atau permintaan penawaran.</p>
+
+    <form class="offer-form" onsubmit="sendWA(); return false;">
+        <input type="text" id="nama" placeholder="Nama Perusahaan / Perorangan" required>
+        <input type="text" id="kontak" placeholder="No. HP / WhatsApp" required>
+        <input type="text" id="lokasi" placeholder="Lokasi Proyek" required>
+        <textarea id="deskripsi" placeholder="Deskripsi Pekerjaan" rows="5" required></textarea>
+
+        <button type="submit">Kirim Penawaran</button>
+    </form>
+</section>
+    
 <section class="cta">
     <h2>Siap Bekerja Sama Dengan Kami?</h2>
     <p>Hubungi PT Nafaz Jaya Pratama untuk solusi konstruksi elektrikal yang aman dan profesional.</p>
@@ -438,9 +506,37 @@ function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
 </script>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/+628117068380" class="wa-float" target="_blank">
+    💬
+</a>
+
+<script>
+function sendWA() {
+    const nama = document.getElementById("nama").value;
+    const kontak = document.getElementById("kontak").value;
+    const lokasi = document.getElementById("lokasi").value;
+    const deskripsi = document.getElementById("deskripsi").value;
+
+    const pesan = 
+`Halo PT Nafaz Jaya Pratama,
+Saya ingin mengajukan penawaran proyek.
+
+Nama: ${nama}
+Kontak: ${kontak}
+Lokasi Proyek: ${lokasi}
+Deskripsi:
+${deskripsi}`;
+
+    const waUrl = "https://wa.me/628117068380?text=" + encodeURIComponent(pesan);
+    window.open(waUrl, "_blank");
+}
+</script>
     
 </body>
 </html>
+
 
 
 
