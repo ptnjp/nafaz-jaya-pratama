@@ -322,6 +322,58 @@ footer {
 .offer-form button:hover {
     background: #7f0000;
 }
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 20px;
+}
+
+.testimonial {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #b71c1c;
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+.testimonial h4 {
+    margin-top: 15px;
+    color: #7f0000;
+}
+
+<section class="section" id="legalitas">
+    <h2>Legalitas Perusahaan</h2>
+
+    <ul class="legal-list">
+        <li>Akta Pendirian & AHU</li>
+        <li>NIB & NPWP</li>
+        <li>SIUP / OSS</li>
+        <li>Mitra Resmi PT PLN (Persero)</li>
+        <li>Tenaga Bersertifikat</li>
+    </ul>
+</section>
+
+    .legal-list {
+    line-height: 2;
+    padding-left: 20px;
+}
+
+<iframe 
+src="https://www.google.com/maps?q=Bengkalis,Riau&output=embed"
+width="100%" 
+height="300" 
+style="border:0; border-radius:12px;" 
+allowfullscreen="" 
+loading="lazy">
+</iframe>
+
+<meta name="description" content="PT Nafaz Jaya Pratama adalah kontraktor elektrikal mitra resmi PLN, melayani pekerjaan JTM, JTR, instalasi listrik, gardu dan trafo.">
+<meta name="keywords" content="Kontraktor PLN, JTM JTR, Instalasi Listrik, Nafaz Jaya Pratama">
+<meta name="author" content="PT Nafaz Jaya Pratama">
     
 </style>
 </head>
@@ -434,6 +486,27 @@ PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Per
 
     </div>
 </div>
+
+<section class="section" id="testimoni">
+    <h2>Testimoni Klien</h2>
+
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>“Pekerjaan rapi, cepat, dan sesuai standar PLN.”</p>
+            <h4>— PLN UID Riau</h4>
+        </div>
+
+        <div class="testimonial">
+            <p>“Tim profesional dan responsif, sangat direkomendasikan.”</p>
+            <h4>— Kontraktor Perumahan</h4>
+        </div>
+
+        <div class="testimonial">
+            <p>“Kualitas kerja bagus dan tepat waktu.”</p>
+            <h4>— Manajemen Proyek</h4>
+        </div>
+    </div>
+</section>
     
 <section class="section" id="kontak">
 <h2>Kontak Kami</h2>
@@ -536,6 +609,7 @@ ${deskripsi}`;
     
 </body>
 </html>
+
 
 
 
