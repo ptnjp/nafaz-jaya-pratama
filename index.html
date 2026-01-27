@@ -179,6 +179,31 @@
     object-fit: cover;
     border-radius: 8px;
 }
+ /* WHATSAPP FLOATING */
+.wa-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 3000;
+}
+.wa-float:hover {
+    background: #1ebe5d;
+}    
+
+        #layanan ul {
+    padding-left: 18px;
+    line-height: 1.8;
+}
+#layanan li {
+    margin-bottom: 6px;
+}
         
     </style>
 </head>
@@ -214,7 +239,17 @@
             Sebagai Mitra Resmi PT PLN (Persero) yang berkontrak langsung dengan PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Persero) PLN UID Sumatera Barat, kami berkomitmen memberikan layanan yang aman, berkualitas, dan terpercaya.
         </p>
     </div>
-
+<div class="box" id="layanan">
+    <h2>Layanan Kami</h2>
+    <ul>
+        <li>Pekerjaan JTM & JTR</li>
+        <li>Instalasi listrik gedung & kawasan</li>
+        <li>Pemasangan dan pemeliharaan gardu distribusi</li>
+        <li>Sambungan rumah, KWh meter & penambahan daya</li>
+        <li>Maintenance & penanganan gangguan darurat</li>
+        <li>Pekerjaan interior dan pendukung lainnya</li>
+    </ul>
+</div>
     <div class="box" id="dokumentasi">
         <h2>Dokumentasi Pekerjaan</h2>
 
@@ -296,8 +331,21 @@ function closeGallery() {
     document.getElementById("galleryModal").style.display = "none";
 }
 </script>
+
+    <a href="https://wa.me/628117068380" class="wa-float" target="_blank">
+    💬 WhatsApp Kami
+</a>
+    <iframe
+  src="https://www.google.com/maps?q=Indonesia&output=embed"
+  width="100%"
+  height="250"
+  style="border:0; border-radius:10px; margin-top:15px;"
+  allowfullscreen
+  loading="lazy">
+</iframe>
 </body>
 </html>
+
 
 
 
