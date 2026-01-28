@@ -4,913 +4,188 @@
 <meta charset="UTF-8">
 <title>PT Nafaz Jaya Pratama</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
 <meta name="description" content="PT Nafaz Jaya Pratama adalah kontraktor elektrikal mitra resmi PLN, melayani pekerjaan JTM, JTR, instalasi listrik, gardu dan trafo.">
 <meta name="keywords" content="Kontraktor PLN, JTM JTR, Instalasi Listrik, Nafaz Jaya Pratama">
 <meta name="author" content="PT Nafaz Jaya Pratama">
-    
-
 
 <style>
+/* RESET & BASE */
 * { box-sizing: border-box; }
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f4f6f8;
-    color: #333;
-}
+body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f6f8; color: #333; }
+img { display: block; max-width: 100%; }
 
-header img {
-    width: 90px;
-    margin-bottom: 15px;
-}
-
+/* NAVIGATION */
 nav {
-    background: #7f0000;
-    text-align: center;
-    padding: 12px;
-}
-
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-}
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.section {
-    background: #fff;
-    padding: 35px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-}
-
-h2 {
-    color: #b71c1c;
-    margin-bottom: 20px;
-}
-
-p {
-    line-height: 1.8;
-    text-align: justify;
-}
-
-/* === NILAI PLUS === */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 20px;
-}
-
-.feature {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-/* === LAYANAN === */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    gap: 20px;
-}
-
-.service {
-    border: 1px solid #eee;
-    padding: 25px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.service:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* === GALERI === */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 15px;
-}
-
-.photo img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* === MODAL === */
-#modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    text-align: center;
-    padding-top: 60px;
-    z-index: 999;
-}
-
-#modal img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-}
-
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-    .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
-    text-align: center;
-}
-
-.stat {
-    background: linear-gradient(135deg, #b71c1c, #7f0000);
-    color: white;
-    padding: 30px 20px;
-    border-radius: 12px;
-}
-
-.stat h3 {
-    font-size: 32px;
-    margin: 0;
-}
-
-.stat p {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.cta {
-    background: linear-gradient(135deg, #7f0000, #b71c1c);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.cta a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: white;
-    color: #7f0000;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 30px;
-}
-
-/* === GALERI PROFESIONAL === */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 25px;
-}
-
-.photo {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.photo img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.photo:hover img {
-    transform: scale(1.1);
-}
-
-/* Overlay */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.photo:hover .overlay {
-    opacity: 1;
-}
-
-.overlay span {
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-.overlay button {
-    padding: 8px 18px;
-    border: none;
-    background: #c82323;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-/* === GOOGLE MAPS === */
-.map-box {
-    width: 100%;
-    height: 400px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.map-box iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-.map-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 25px;
-    background: #b71c1c;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: 14px;
-}
-
-/* FLOATING WHATSAPP */
-.wa-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #25D366;
-    color: white;
-    font-size: 28px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-.wa-float:hover {
-    background: #1ebe5d;
-}
-
-/* FORM PENAWARAN */
-.offer-form {
-    max-width: 600px;
-    margin: auto;
-}
-
-.offer-form input,
-.offer-form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-family: 'Poppins', sans-serif;
-}
-
-.offer-form button {
-    width: 100%;
-    padding: 14px;
-    background: #b71c1c;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.offer-form button:hover {
-    background: #7f0000;
-}
-
-.testimonials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 20px;
-}
-
-.testimonial {
-    background: #f9f9f9;
-    padding: 25px;
-    border-radius: 12px;
-    border-left: 5px solid #b71c1c;
-}
-
-.testimonial p {
-    font-style: italic;
-}
-
-.testimonial h4 {
-    margin-top: 15px;
-    color: #7f0000;
-}
-
-    .legal-list {
-    line-height: 2;
-    padding-left: 20px;
-}
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-nav a.active {
-    border-bottom: 2px solid #fff;
-    padding-bottom: 4px;
-}
-
-    .tagline {
-    text-align: center;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #ffe0e0;
-    opacity: 0.95;
-    margin-top: 8px;
-}
-
-/* =========================
-   HEADER UTAMA
-========================= */
-.site-header {
-    position: relative;
-    background: url("./images/header.jpg") center/cover no-repeat;
-    padding: 110px 20px;
-    text-align: center;
-    color: #fff;
-}
-
-/* Overlay gelap */
-.site-header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 1;
-}
-
-/* Konten header */
-.header-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: auto;
-}
-
-/* Logo */
-.logo {
-    width: 95px;
-    margin-bottom: 15px;
-}
-
-/* Judul */
-.site-header h1 {
-    font-size: 36px;
-    font-weight: 600;
-    margin: 10px 0;
-}
-
-/* Badge PLN */
-.badge-pln {
-    display: inline-block;
-    margin: 12px 0;
-    padding: 7px 22px;
-    background: #ffffff;
-    color: #7f0000;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 30px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-}
-
-/* Tagline */
-.tagline {
-    margin-top: 10px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    opacity: 0.9;
-}
-
-/* =========================
-   ANIMASI HEADER
-========================= */
-.header-inner > * {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s ease forwards;
-}
-
-.header-inner .logo { animation-delay: 0.2s; }
-.header-inner h1 { animation-delay: 0.4s; }
-.header-inner .badge-pln { animation-delay: 0.6s; }
-.header-inner .tagline { animation-delay: 0.8s; }
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-    .site-header {
-        padding: 80px 15px;
-    }
-
-    .site-header h1 {
-        font-size: 26px;
-    }
-
-    .tagline {
-        font-size: 12px;
-    }
-}
-
-/* =========================
-   CTA HEADER
-========================= */
-.header-cta {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn-primary {
-    background: #b71c1c;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-primary:hover {
-    background: #7f0000;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    border: 2px solid #fff;
-    color: #fff;
-    padding: 10px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.btn-outline:hover {
-    background: #fff;
-    color: #7f0000;
-}
-
-/* =========================
-   SCROLL INDICATOR
-========================= */
-.scroll-indicator {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 26px;
-    color: #fff;
-    opacity: 0.8;
-    animation: bounce 1.5s infinite;
-    z-index: 2;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translate(-50%, 0); }
-    50% { transform: translate(-50%, 10px); }
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
-.about {
-    background: #f7f7f7;
-    padding: 80px 20px;
-}
-
-.about-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.about-text {
-    max-width: 700px;
-    margin: 0 auto 50px;
-    text-align: center;
-}
-
-.about-text h2 {
-    font-size: 32px;
-    color: #7f0000;
-    margin-bottom: 15px;
-}
-
-.about-text p {
-    color: #555;
-    line-height: 1.8;
-    font-size: 15px;
-}
-
-/* Highlight cards */
-.about-highlight {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: #fff;
-    padding: 30px 25px;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-    color: #b71c1c;
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-}
-
-    
+  background: #7f0000;
+  text-align: center;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: 0.3s;
+}
+nav.scrolled { box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; }
+nav a.active { border-bottom: 2px solid #fff; padding-bottom: 4px; }
+
+/* HEADER */
+.site-header { position: relative; background: url('./images/header.jpg') center/cover no-repeat; padding: 110px 20px; text-align: center; color: #fff; }
+.site-header::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.7); z-index: 1; }
+.header-inner { position: relative; z-index: 2; max-width: 900px; margin: auto; }
+.logo { width: 95px; margin-bottom: 15px; }
+.site-header h1 { font-size: 36px; font-weight: 600; margin: 10px 0; }
+.badge-pln { display: inline-block; margin: 12px 0; padding: 7px 22px; background: #fff; color: #7f0000; font-size: 13px; font-weight: 600; border-radius: 30px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+.tagline { margin-top: 10px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.9; }
+.header-cta { margin-top: 25px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.btn-primary { background: #b71c1c; color: #fff; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.btn-primary:hover { background: #7f0000; transform: translateY(-2px); }
+.btn-outline { border: 2px solid #fff; color: #fff; padding: 10px 28px; border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s; }
+.btn-outline:hover { background: #fff; color: #7f0000; }
+.scroll-indicator { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); font-size: 26px; color: #fff; opacity: 0.8; animation: bounce 1.5s infinite; z-index: 2; }
+@keyframes bounce { 0%,100%{ transform: translate(-50%,0);} 50%{ transform: translate(-50%,10px);} }
+.header-inner > * { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease forwards; }
+.header-inner .logo { animation-delay: 0.2s; } .header-inner h1 { animation-delay: 0.4s; } .header-inner .badge-pln { animation-delay: 0.6s; } .header-inner .tagline { animation-delay: 0.8s; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* CONTAINER */
+.container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+.section { background: #fff; padding: 35px; margin-bottom: 40px; border-radius: 12px; }
+h2 { color: #b71c1c; margin-bottom: 20px; }
+p { line-height: 1.8; text-align: justify; }
+
+/* ABOUT */
+.about { background: #f7f7f7; padding: 80px 20px; text-align: center; }
+.about-highlight { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 25px; margin-top: 40px; }
+.card { background:#fff; padding:30px 25px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition:0.3s; }
+.card:hover { transform: translateY(-6px); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
+.card h3 { color:#b71c1c; margin-bottom:10px; }
+.card p { font-size:14px; color:#666; line-height:1.6; }
+
+/* SERVICES */
+.services { background:#fff; padding:90px 20px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.service-card { background:#f9f9f9; padding:35px 25px; border-radius:16px; text-align:center; transition:0.3s ease; border:1px solid #eee; }
+.service-card:hover { transform:translateY(-8px); box-shadow:0 15px 35px rgba(0,0,0,0.12); background:#fff; }
+.icon { width:60px; height:60px; margin:0 auto 18px; background:#7f0000; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; }
+
+/* PROJECTS */
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; }
+.project-card { position:relative; overflow:hidden; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.12); }
+.project-card img { width:100%; height:100%; object-fit:cover; transition:0.4s ease; }
+.project-overlay { position:absolute; inset:0; background:rgba(127,0,0,0.75); color:#fff; display:flex; flex-direction:column; justify-content:center; align-items:center; opacity:0; transition:0.4s ease; text-align:center; padding:20px; }
+.project-overlay h3{ font-size:18px; margin-bottom:6px; }
+.project-overlay span{ font-size:13px; opacity:0.9; }
+.project-card:hover img{ transform: scale(1.1); }
+.project-card:hover .project-overlay{ opacity:1; }
+
+/* GALLERY & MODAL */
+.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:25px; }
+.photo { position:relative; overflow:hidden; border-radius:12px; }
+.photo img { width:100%; height:260px; object-fit:cover; transition:transform 0.4s ease; }
+.photo:hover img { transform: scale(1.1); }
+.overlay { position:absolute; inset:0; background:rgba(0,0,0,0.65); color:#fff; display:flex; flex-direction:column; justify-content:center; align-items:center; opacity:0; transition:0.3s; }
+.photo:hover .overlay { opacity:1; }
+.overlay span { font-size:16px; margin-bottom:10px; font-weight:500; }
+.overlay button { padding:8px 18px; border:none; background:#c82323; color:white; border-radius:20px; cursor:pointer; font-size:14px; }
+#modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); text-align:center; padding-top:60px; z-index:999; }
+#modal img { max-width:90%; max-height:80%; border-radius:10px; }
+#modal p { color:#fff; margin-top:15px; }
+#modal .close-btn { position:absolute; top:20px; right:30px; font-size:30px; color:#fff; cursor:pointer; }
+
+/* CTA */
+.cta { background: linear-gradient(135deg,#7f0000,#b71c1c); color:white; text-align:center; padding:60px 20px; }
+.cta a { display:inline-block; margin-top:20px; padding:12px 30px; background:white; color:#7f0000; text-decoration:none; font-weight:600; border-radius:30px; }
+
+/* FOOTER */
+footer { background:#222; color:#fff; text-align:center; padding:20px; }
+
+/* FLOATING WA */
+.wa-float { position:fixed; bottom:25px; right:25px; background:#25D366; color:white; font-size:28px; width:55px; height:55px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); z-index:1000; }
+.wa-float:hover { background:#1ebe5d; }
+
+/* RESPONSIVE */
+@media(max-width:768px){ .site-header{padding:80px 15px;} .site-header h1{font-size:26px;} .tagline{font-size:12px;} }
+@media(max-width:480px){ .container, .section{padding:20px 15px;} .services-grid, .projects-grid, .about-highlight, .gallery{grid-template-columns:1fr;} }
 </style>
 </head>
-
 <body>
 
-<header class="site-header">
-    <div class="header-overlay"></div>
-
-    <div class="header-inner">
-        <img src="./images/logo-njp.jpg" class="logo">
-
-        <h1>PT Nafaz Jaya Pratama</h1>
-
-        <div class="badge-pln">
-            ⚡ Mitra Resmi PLN
-        </div>
-
-        <p class="tagline">
-            General Contractor • Konstruksi Elektrikal • Perdagangan Umum
-        </p>
-
-<div class="header-cta">
-    <a href="#kontak" class="btn-primary">Hubungi Kami</a>
-    <a href="#dokumentasi" class="btn-outline">Lihat Proyek</a>
-</div>
-        
-    </div>
-    
-<div class="scroll-indicator">
-    ↓
-</div>
-    
-</header>
-
-<section class="about">
-    <div class="about-container">
-        <div class="about-text">
-            <h2>Tentang Kami</h2>
-            <p>
-                PT Nafaz Jaya Pratama adalah perusahaan <strong>General Contractor</strong>
-                yang bergerak di bidang <strong>konstruksi elektrikal</strong>,
-                meliputi pekerjaan JTM, JTR, SR, APP, serta instalasi listrik
-                untuk perumahan, industri, dan fasilitas umum.
-            </p>
-        </div>
-
-        <div class="about-highlight">
-            <div class="card">
-                <h3>⚡ Mitra PLN</h3>
-                <p>Berpengalaman menangani pekerjaan distribusi dan jaringan listrik</p>
-            </div>
-            <div class="card">
-                <h3>🏗 Profesional</h3>
-                <p>Dikerjakan oleh tenaga ahli & berstandar keselamatan kerja</p>
-            </div>
-            <div class="card">
-                <h3>📍 Terpercaya</h3>
-                <p>Dipercaya berbagai klien perumahan & industri</p>
-            </div>
-        </div>
-    </div>
-</section>
-    
 <nav>
-    <a href="index.html">Beranda</a>
-    <a href="profil.html">Profil</a>
-    <a href="proyek.html">Proyek</a>
-    <a href="kontak.html">Kontak</a>
+  <a href="#beranda">Beranda</a>
+  <a href="#profil">Profil</a>
+  <a href="#layanan">Layanan</a>
+  <a href="#proyek">Proyek</a>
+  <a href="#kontak">Kontak</a>
 </nav>
 
-<div class="container">
-
-<section class="section" id="profil">
-<h2>Profil Perusahaan</h2>
-<p>
-PT Nafaz Jaya Pratama adalah perusahaan general kontraktor di bidang konstruksi elektrikal yang menangani Pekerjaan Jaringan Distribusi 
-Tenaga Listrik Tegangan Menengah (JTM), Jaringan Distribusi Tenaga Listrik Tegangan Rendah (JTR), Instalasi Pemanfaatan Tengaa Listrik. 
-Kami melayani proyek perumahan, hotel, kawasan belum berlistrik, serta fasilitas umum dan komersial seperti Bank, Mall, Rumah Sakit, 
-dan Gedung Pemerintahan, termasuk maintenance, pekerjaan darurat (emergency), pemasangan KWh meter, dan penambahan daya. Selain kelistrikan, 
-kami juga berpengalaman dalam pekerjaan interior, salah satunya pada Kantor PLTG MPP Balai Pungut 2x25 MW. Sebagai Mitra Resmi PT PLN (Persero) 
-yang berkontrak langsung dengan PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Persero) PLN UID Sumatera Barat, 
-kami berkomitmen menghadirkan layanan yang aman, berkualitas,terpercaya dan dapat diandalkan.
-</p>
-</section>
-
-    <section class="section">
-    <h2>Profil Singkat Perusahaan</h2>
-
-    <div class="stats">
-        <div class="stat">
-            <h3>10+</h3>
-            <p>Tahun Pengalaman</p>
-        </div>
-        <div class="stat">
-            <h3>100+</h3>
-            <p>Proyek Terselesaikan</p>
-        </div>
-        <div class="stat">
-            <h3>PLN</h3>
-            <p>Mitra Resmi</p>
-        </div>
-        <div class="stat">
-            <h3>Profesional</h3>
-            <p>Tenaga Ahli</p>
+<header class="site-header">
+    <div class="header-inner">
+        <img src="./images/logo-njp.jpg" class="logo">
+        <h1>PT Nafaz Jaya Pratama</h1>
+        <div class="badge-pln">⚡ Mitra Resmi PLN</div>
+        <p class="tagline">General Contractor • Konstruksi Elektrikal • Perdagangan Umum</p>
+        <div class="header-cta">
+            <a href="#kontak" class="btn-primary">Hubungi Kami</a>
+            <a href="#dokumentasi" class="btn-outline">Lihat Proyek</a>
         </div>
     </div>
-</section>
-    
-<section class="section">
-<h2>Nilai Plus Kami</h2>
-<div class="features">
-<div class="feature">Tenaga Ahli Berpengalaman</div>
-<div class="feature">Standar K3 & Mutu Kerja</div>
-<div class="feature">Respon Cepat & Profesional</div>
-<div class="feature">Mitra Resmi PLN</div>
-</div>
-</section>
+    <div class="scroll-indicator">↓</div>
+</header>
 
-<section class="section" id="layanan">
-<h2>Layanan Kami</h2>
-<div class="services">
-<div class="service">Pekerjaan JTM & JTR</div>
-<div class="service">Instalasi Listrik Gedung</div>
-<div class="service">Gardu Distribusi & Trafo</div>
-<div class="service">Sambungan Rumah & KWh Meter</div>
-<div class="service">Maintenance & Emergency</div>
-<div class="service">Pekerjaan Interior</div>
-</div>
-</section>
-    
-<div class="box" id="dokumentasi">
-    <h1>Dokumentasi Proyek</h1>
-<p>Beberapa pekerjaan yang telah kami selesaikan.</p>
-
-    <div class="gallery">
-
-        <div class="photo">
-            <img src="./images/proyek1.jpg">
-            <div class="overlay" onclick="openModal(this)">
-                <span>Pekerjaan JTM</span>
-                <button>Lihat Selengkapnya</button>
-            </div>
-        </div>
-
-        <div class="photo">
-            <img src="./images/proyek2.jpg">
-            <div class="overlay" onclick="openModal(this)">
-                <span>Instalasi Gardu Distribusi</span>
-                <button>Lihat Selengkapnya</button>
-            </div>
-        </div>
-
-        <div class="photo">
-            <img src="./images/proyek3.jpg">
-            <div class="overlay" onclick="openModal(this)">
-                <span>Instalasi Listrik Gedung</span>
-                <button>Lihat Selengkapnya</button>
-            </div>
-        </div>
-
-    </div>
+<!-- MODAL -->
+<div id="modal">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
+  <img id="modalImg">
+  <p id="modalText"></p>
 </div>
 
-<section class="section" id="testimoni">
-    <h2>Testimoni Klien</h2>
-
-    <div class="testimonials">
-        <div class="testimonial">
-            <p>“Pekerjaan rapi, cepat, dan sesuai standar PLN.”</p>
-            <h4>— PLN UID Riau</h4>
-        </div>
-
-        <div class="testimonial">
-            <p>“Tim profesional dan responsif, sangat direkomendasikan.”</p>
-            <h4>— Kontraktor Perumahan</h4>
-        </div>
-
-        <div class="testimonial">
-            <p>“Kualitas kerja bagus dan tepat waktu.”</p>
-            <h4>— Manajemen Proyek</h4>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="legalitas">
-    <h2>Legalitas Perusahaan</h2>
-
-    <ul class="legal-list">
-        <li>Akta Pendirian & AHU</li>
-        <li>NIB & NPWP</li>
-        <li>SIUP / OSS</li>
-        <li>Mitra Resmi PT PLN (Persero)</li>
-        <li>Tenaga Bersertifikat</li>
-    </ul>
-</section>
-    
-<section class="section" id="kontak">
-<h2>Kontak Kami</h2>
-<p>Email: pt.nafazjayapratama@yahoo.com</p>
-<p>Telepon: 0811-7068-380</p>
-</section>
-      
-<section class="section" id="lokasi">
-  <h2>Lokasi Kantor</h2>
-
-  <div class="map-box">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d613.5174936173458!2d101.17026898492404!3d1.2704411683885244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-
-  <a href="https://maps.google.com" target="_blank" class="map-btn">
-    Buka di Google Maps
-  </a>
-</section>
-    
-</div>
-
-    <section class="section" id="penawaran">
-    <h2>Form Penawaran Proyek</h2>
-    <p>Silakan isi form berikut untuk pengajuan pekerjaan atau permintaan penawaran.</p>
-
-    <form class="offer-form" onsubmit="sendWA(); return false;">
-        <input type="text" id="nama" placeholder="Nama Perusahaan / Perorangan" required>
-        <input type="text" id="nohp" placeholder="No. HP / WhatsApp" required>
-        <input type="text" id="lokasi" placeholder="Lokasi Proyek" required>
-        <textarea id="deskripsi" placeholder="Deskripsi Pekerjaan" rows="5" required></textarea>
-
-        <button type="submit">Kirim Penawaran</button>
-    </form>
-</section>
-    
-<section class="cta">
-    <h2>Siap Bekerja Sama Dengan Kami?</h2>
-    <p>Hubungi PT Nafaz Jaya Pratama untuk solusi konstruksi elektrikal yang aman dan profesional.</p>
-    <a href="#kontak">Hubungi Kami</a>
-</section>
-
-        
-<footer>
-© 2026 PT Nafaz Jaya Pratama
-</footer>
-
-<div id="modal" onclick="closeModal()">
-    <img id="modalImg">
-    <p id="modalText"></p>
-</div>
-    
-<script>
-function openModal(el) {
-    const img = el.parentElement.querySelector("img");
-    const text = el.querySelector("span").innerText;
-
-    document.getElementById("modal").style.display = "block";
-    document.getElementById("modalImg").src = img.src;
-    document.getElementById("modalText").innerText = text;
-}
-
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-}
-</script>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/+628117068380" class="wa-float" target="_blank">
-    💬
-</a>
+<!-- FLOATING WA -->
+<a href="https://wa.me/+628117068380" class="wa-float" target="_blank">💬</a>
 
 <script>
-function sendWA() {
-    const nama = document.getElementById("nama").value;
-    const kontak = document.getElementById("nohp").value;
-    const lokasi = document.getElementById("lokasi").value;
-    const deskripsi = document.getElementById("deskripsi").value;
-
-    const pesan = 
-`Halo PT Nafaz Jaya Pratama,
-Saya ingin mengajukan penawaran proyek.
-
-Nama: ${nama}
-Kontak: ${kontak}
-Lokasi Proyek: ${lokasi}
-Deskripsi:
-${deskripsi}`;
-
-    const waUrl = "https://wa.me/628117068380?text=" + encodeURIComponent(pesan);
-    window.open(waUrl, "_blank");
+function openModal(el){
+  const img = el.parentElement.querySelector("img");
+  const text = el.querySelector("span").innerText;
+  document.getElementById("modal").style.display="block";
+  document.getElementById("modalImg").src=img.src;
+  document.getElementById("modalText").innerText=text;
 }
-</script>
+function closeModal(){ document.getElementById("modal").style.display="none"; }
 
-<script>
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+// WA Form
+function sendWA(){
+  const nama=document.getElementById("nama").value;
+  const kontak=document.getElementById("nohp").value;
+  const lokasi=document.getElementById("lokasi").value;
+  const deskripsi=document.getElementById("deskripsi").value;
+  const pesan=`Halo PT Nafaz Jaya Pratama,\nSaya ingin mengajukan penawaran proyek.\n\nNama: ${nama}\nKontak: ${kontak}\nLokasi Proyek: ${lokasi}\nDeskripsi:\n${deskripsi}`;
+  window.open("https://wa.me/628117068380?text=" + encodeURIComponent(pesan),"_blank");
+}
 
-window.addEventListener("scroll", () => {
-    let current = "";
+// Scroll active link
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll("nav a");
+window.addEventListener("scroll",()=>{
+  let current="";
+  sections.forEach(section=>{
+    const sectionTop=section.offsetTop-100;
+    if(scrollY>=sectionTop) current=section.getAttribute("id");
+  });
+  navLinks.forEach(link=>{
+    link.classList.remove("active");
+    if(link.getAttribute("href")==="#"+current) link.classList.add("active");
+  });
+});
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
+// Nav shadow on scroll
+window.addEventListener("scroll",()=>{
+  const nav=document.querySelector("nav");
+  nav.classList.toggle("scrolled",window.scrollY>80);
 });
 </script>
 
-<script>
-window.addEventListener("scroll", () => {
-    const nav = document.querySelector("nav");
-    nav.classList.toggle("scrolled", window.scrollY > 80);
-});
-</script>
-    
 </body>
 </html>
-
-
