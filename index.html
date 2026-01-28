@@ -370,57 +370,51 @@ nav a.active {
     margin-top: 8px;
 }
 
-/* === HEADER FINAL (FIX FOTO TIDAK MUNCUL) === */
+/* =========================
+   HEADER UTAMA
+========================= */
 .site-header {
     position: relative;
-    background-image: url("./images/header.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 100px 20px;
+    background: url("./images/header.jpg") center/cover no-repeat;
+    padding: 110px 20px;
     text-align: center;
     color: #fff;
 }
 
-.header-overlay {
+/* Overlay gelap */
+.site-header::before {
+    content: "";
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.7);
     z-index: 1;
 }
 
+/* Konten header */
 .header-inner {
     position: relative;
     z-index: 2;
+    max-width: 900px;
+    margin: auto;
 }
 
+/* Logo */
 .logo {
     width: 95px;
     margin-bottom: 15px;
 }
 
-.badge-pln {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 20px;
-    background: #fff;
-    color: #7f0000;
-    border-radius: 30px;
+/* Judul */
+.site-header h1 {
+    font-size: 36px;
     font-weight: 600;
-}
-
-.tagline {
-    margin-top: 10px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    opacity: 0.9;
+    margin: 10px 0;
 }
 
 /* Badge PLN */
 .badge-pln {
     display: inline-block;
-    margin-top: 12px;
+    margin: 12px 0;
     padding: 7px 22px;
     background: #ffffff;
     color: #7f0000;
@@ -430,44 +424,50 @@ nav a.active {
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .site-header h1 {
-        font-size: 26px;
-    }
-    .tagline {
-        font-size: 12px;
-    }
+/* Tagline */
+.tagline {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.9;
 }
 
-/* === HEADER ANIMATION === */
+/* =========================
+   ANIMASI HEADER
+========================= */
 .header-inner > * {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeUp 0.9s ease forwards;
+    animation: fadeUp 0.8s ease forwards;
 }
 
-.header-inner .logo {
-    animation-delay: 0.2s;
-    transform: scale(0.9);
-}
-
-.header-inner h1 {
-    animation-delay: 0.4s;
-}
-
-.header-inner .badge-pln {
-    animation-delay: 0.6s;
-}
-
-.header-inner .tagline {
-    animation-delay: 0.8s;
-}
+.header-inner .logo { animation-delay: 0.2s; }
+.header-inner h1 { animation-delay: 0.4s; }
+.header-inner .badge-pln { animation-delay: 0.6s; }
+.header-inner .tagline { animation-delay: 0.8s; }
 
 @keyframes fadeUp {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 80px 15px;
+    }
+
+    .site-header h1 {
+        font-size: 26px;
+    }
+
+    .tagline {
+        font-size: 12px;
     }
 }
     
@@ -510,10 +510,13 @@ nav a.active {
 <section class="section" id="profil">
 <h2>Profil Perusahaan</h2>
 <p>
-PT Nafaz Jaya Pratama adalah perusahaan general kontraktor di bidang konstruksi elektrikal yang menangani Pekerjaan Jaringan Distribusi Tenaga Listrik Tegangan Menengah (JTM), Jaringan Distribusi Tenaga Listrik Tegangan Rendah (JTR), 
-Instalasi Pemanfaatan Tengaa Listrik. . Kami melayani proyek perumahan, hotel, kawasan belum berlistrik, serta fasilitas umum dan komersial seperti Bank, Mall, Rumah Sakit, dan Gedung Pemerintahan, termasuk maintenance, pekerjaan darurat (emergency), 
-pemasangan KWh meter, dan penambahan daya. Selain kelistrikan, kami juga berpengalaman dalam pekerjaan interior, salah satunya pada Kantor PLTG MPP Balai Pungut 2x25 MW. Sebagai Mitra Resmi PT PLN (Persero) yang berkontrak langsung dengan 
-PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Persero) PLN UID Sumatera Barat, kami berkomitmen menghadirkan layanan yang aman, berkualitas,terpercaya dan dapat diandalkan.
+PT Nafaz Jaya Pratama adalah perusahaan general kontraktor di bidang konstruksi elektrikal yang menangani Pekerjaan Jaringan Distribusi 
+Tenaga Listrik Tegangan Menengah (JTM), Jaringan Distribusi Tenaga Listrik Tegangan Rendah (JTR), Instalasi Pemanfaatan Tengaa Listrik. 
+Kami melayani proyek perumahan, hotel, kawasan belum berlistrik, serta fasilitas umum dan komersial seperti Bank, Mall, Rumah Sakit, 
+dan Gedung Pemerintahan, termasuk maintenance, pekerjaan darurat (emergency), pemasangan KWh meter, dan penambahan daya. Selain kelistrikan, 
+kami juga berpengalaman dalam pekerjaan interior, salah satunya pada Kantor PLTG MPP Balai Pungut 2x25 MW. Sebagai Mitra Resmi PT PLN (Persero) 
+yang berkontrak langsung dengan PT PLN (Persero) UID Wilayah Riau dan Kepulauan Riau (UIDWRKR) serta PT PLN (Persero) PLN UID Sumatera Barat, 
+kami berkomitmen menghadirkan layanan yang aman, berkualitas,terpercaya dan dapat diandalkan.
 </p>
 </section>
 
@@ -749,12 +752,3 @@ window.addEventListener("scroll", () => {
     
 </body>
 </html>
-
-
-
-
-
-
-
-
-
