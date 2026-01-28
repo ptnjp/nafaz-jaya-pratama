@@ -39,14 +39,6 @@ nav a {
     text-decoration: none;
     font-weight: 500;
 }
-
-.hero {
-    background: #444;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-}
-
 .container {
     max-width: 1100px;
     margin: auto;
@@ -531,6 +523,70 @@ nav a.active {
     0%, 100% { transform: translate(-50%, 0); }
     50% { transform: translate(-50%, 10px); }
 }
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about {
+    background: #f7f7f7;
+    padding: 80px 20px;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-text {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    color: #7f0000;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* Highlight cards */
+.about-highlight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #b71c1c;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
     
 </style>
 </head>
@@ -566,16 +622,41 @@ nav a.active {
     
 </header>
 
+<section class="about">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>Tentang Kami</h2>
+            <p>
+                PT Nafaz Jaya Pratama adalah perusahaan <strong>General Contractor</strong>
+                yang bergerak di bidang <strong>konstruksi elektrikal</strong>,
+                meliputi pekerjaan JTM, JTR, SR, APP, serta instalasi listrik
+                untuk perumahan, industri, dan fasilitas umum.
+            </p>
+        </div>
+
+        <div class="about-highlight">
+            <div class="card">
+                <h3>⚡ Mitra PLN</h3>
+                <p>Berpengalaman menangani pekerjaan distribusi dan jaringan listrik</p>
+            </div>
+            <div class="card">
+                <h3>🏗 Profesional</h3>
+                <p>Dikerjakan oleh tenaga ahli & berstandar keselamatan kerja</p>
+            </div>
+            <div class="card">
+                <h3>📍 Terpercaya</h3>
+                <p>Dipercaya berbagai klien perumahan & industri</p>
+            </div>
+        </div>
+    </div>
+</section>
+    
 <nav>
     <a href="index.html">Beranda</a>
     <a href="profil.html">Profil</a>
     <a href="proyek.html">Proyek</a>
     <a href="kontak.html">Kontak</a>
 </nav>
-
-<section class="hero">
-    <h2>Profesional & Terpercaya di Bidang Konstruksi Elektrikal</h2>
-</section>
 
 <div class="container">
 
@@ -831,4 +912,5 @@ window.addEventListener("scroll", () => {
     
 </body>
 </html>
+
 
