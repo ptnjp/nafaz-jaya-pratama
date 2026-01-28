@@ -470,6 +470,67 @@ nav a.active {
         font-size: 12px;
     }
 }
+
+/* =========================
+   CTA HEADER
+========================= */
+.header-cta {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: #b71c1c;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #7f0000;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #7f0000;
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 26px;
+    color: #fff;
+    opacity: 0.8;
+    animation: bounce 1.5s infinite;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 10px); }
+}
     
 </style>
 </head>
@@ -491,7 +552,18 @@ nav a.active {
         <p class="tagline">
             General Contractor • Konstruksi Elektrikal • Perdagangan Umum
         </p>
+
+<div class="header-cta">
+    <a href="#kontak" class="btn-primary">Hubungi Kami</a>
+    <a href="#dokumentasi" class="btn-outline">Lihat Proyek</a>
+</div>
+        
     </div>
+    
+<div class="scroll-indicator">
+    ↓
+</div>
+    
 </header>
 
 <nav>
@@ -749,6 +821,14 @@ window.addEventListener("scroll", () => {
     });
 });
 </script>
+
+<script>
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    nav.classList.toggle("scrolled", window.scrollY > 80);
+});
+</script>
     
 </body>
 </html>
+
